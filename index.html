@@ -48,6 +48,80 @@ input,select{border:2px solid #d4ddca;border-radius:7px;background:#fffdf8}
 @media(prefers-reduced-motion:reduce){.sky-cloud,.pixel-bird,.lavender-patch,.butterfly,.badgeitem.earned .medal{animation:none!important}}
 @media print{body:before,.sky-cloud,.pixel-bird,.lavender-patch,.butterfly{display:none!important}}
 
+
+/* V14 — mise en page compacte et fiche imprimable sur une page */
+.brand{transform:none!important;border:2px solid #90633d!important;box-shadow:none!important;outline:0!important}
+.brand:before,.brand:after{display:none!important}
+#calculator .calc-heading h2{transform:none!important;border:0!important;outline:0!important;box-shadow:none!important;text-shadow:none!important}
+@media(max-width:700px){
+  .top nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,38px);gap:3px 5px!important;padding:4px 6px calc(4px + env(safe-area-inset-bottom))!important}
+  .top nav button{min-width:0!important;min-height:0!important;height:38px!important;padding:2px!important;overflow-wrap:normal!important;word-break:keep-all!important;white-space:nowrap!important;font-size:10px!important;line-height:1!important}
+  .top nav button .nav-icon{font-size:15px!important;line-height:1!important}
+  .top nav button .nav-label{font-size:10px!important;white-space:nowrap!important;overflow-wrap:normal!important}
+  .top{min-height:136px!important}
+  main.shell.content{margin:7px auto 12px!important;padding:8px 7px 16px!important}
+  #calculator .calc-heading{flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:7px!important;margin-bottom:7px!important;padding:2px 3px 7px!important}
+  #calculator .calc-heading h2{font-size:clamp(21px,6vw,27px)!important;line-height:1.1!important}
+  #calculator .calc-heading .eyebrow{font-size:9px!important;letter-spacing:1.1px!important}
+  #calculator .calc-heading .tabs{align-self:auto!important;flex:0 0 auto!important;display:flex!important;padding:2px!important}
+  #calculator .calc-heading .tabs button{font-size:11px!important;padding:6px 7px!important;white-space:nowrap}
+  #calculator .layout{gap:7px!important}
+  #calculator .card{padding:9px 8px!important;border-width:2px!important;border-radius:13px!important;box-shadow:0 2px 0 #b7834d,inset 0 0 0 2px #fffcf3!important}
+  #calculator .card h3{font-size:17px!important;margin:0 0 7px!important;padding:0 0 5px!important}
+  #calculator .recipe-card h3,#calculator .ingredient-card h3{flex-direction:column!important;justify-content:center!important;gap:1px!important;text-align:center!important}
+  #calculator .section-icon{font-size:21px!important}
+  #calculator .recipe-fields{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:5px 7px!important}
+  #calculator .recipe-fields .field:first-child{grid-column:1/-1!important}
+  #calculator .recipe-fields .field:last-child{grid-column:1/-1!important}
+  #calculator .field{gap:2px!important}
+  #calculator .field label{font-size:10px!important;line-height:1.2}
+  #calculator input,#calculator select{padding:6px 7px!important;font-size:14px!important;min-height:35px!important}
+  #calculator .recipe-card .row.between{gap:6px!important;margin:7px 0 4px!important;font-size:12px!important}
+  #calculator .recipe-card .row.between button{padding:6px 8px!important;font-size:12px!important}
+  #calculator .oil-head{padding:5px 3px!important;font-size:9px!important}
+  #calculator .oilrow-v8{margin:4px 0!important}
+  #calculator .oilrow-v8 input,#calculator .oilrow-v8 select{min-height:32px!important;padding:4px 2px!important;font-size:12px!important}
+  #calculator .oilrow-v8 button{height:29px!important}
+  #calculator .ingredient-summary{display:table!important;width:100%!important;table-layout:auto!important;border-collapse:collapse!important;margin:0 0 7px!important;border:1px solid #d5d4ad!important;border-radius:8px!important;background:#f2f2db!important}
+  #calculator .ingredient-summary tr{display:table-row!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important}
+  #calculator .ingredient-summary td{display:table-cell!important;padding:5px 6px!important;border:0!important;border-bottom:1px solid #dbd6b6!important;white-space:normal!important;overflow-wrap:normal!important;vertical-align:middle!important;font-size:11px!important;line-height:1.25!important}
+  #calculator .ingredient-summary td:first-child{width:65%!important;font-weight:700!important}
+  #calculator .ingredient-summary td:last-child{width:35%!important;text-align:right!important;white-space:nowrap!important;font-size:13px!important;font-weight:800!important}
+  #calculator .ingredient-summary tr:nth-last-child(-n+2){background:#e9edcf!important}
+  #calculator .ingredient-card .notice{padding:7px 8px!important;font-size:10px!important;line-height:1.35!important}
+  #calculator .recipe-actions{gap:6px!important;margin-top:7px!important}
+  #calculator .recipe-actions button{flex:1;min-height:38px!important;padding:6px!important;font-size:12px!important}
+}
+@media(max-width:390px){
+  #calculator .recipe-fields{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #calculator .recipe-fields .field:first-child,#calculator .recipe-fields .field:last-child{grid-column:1/-1!important}
+  #calculator .calc-heading .tabs button{font-size:10px!important;padding:6px 5px!important}
+  #calculator .recipe-actions{flex-direction:row!important}
+}
+@page{size:A4 portrait;margin:8mm}
+@media print{
+  html,body{width:100%!important;min-height:0!important;height:auto!important;margin:0!important;padding:0!important;background:#fff!important;overflow:hidden!important}
+  body:before,body:after,header,footer,main.shell.content:before,.section-ornament,.scene-companion,.no-print,.mobilebar{display:none!important}
+  main.shell.content{display:block!important;width:100%!important;max-width:none!important;height:281mm!important;max-height:281mm!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden!important}
+  .section{display:none!important}
+  #fabrication{display:block!important;width:100%!important;height:281mm!important;max-height:281mm!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;break-after:avoid-page!important;page-break-after:avoid!important}
+  #fabrication>.row.no-print{display:none!important}
+  #fabrication>.layout{display:block!important;width:100%!important;margin:0!important;padding:0!important}
+  #fabrication>.layout>.stack:first-child{display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;align-items:start!important;gap:5mm!important}
+  #fabrication>.layout>.stack:last-child{display:none!important}
+  #fabrication .card{min-width:0!important;margin:0!important;padding:4mm!important;border:1px solid #c9c2ad!important;border-radius:3mm!important;box-shadow:none!important;background:#fff!important;break-inside:avoid!important;page-break-inside:avoid!important}
+  #fabrication h3{font-size:12pt!important;line-height:1.15!important;margin:0 0 2mm!important}
+  #fabrication .stats{gap:2mm!important}
+  #fabrication .stat{padding:2mm 1mm!important;border-radius:2mm!important;background:#f0f1e9!important}
+  #fabrication .stat strong{font-size:11pt!important}
+  #fabrication .stat span{font-size:7pt!important}
+  #fabrication .steps{display:grid!important;gap:1.5mm!important}
+  #fabrication .step{gap:2mm!important;padding:2mm!important;border-radius:2mm!important;font-size:8pt!important;line-height:1.2!important;break-inside:avoid!important;page-break-inside:avoid!important}
+  #fabrication .step input{width:3mm!important;height:3mm!important}
+  #fabrication .notice{margin-top:2mm!important;padding:2mm!important;border:1px solid #d8c9a7!important;font-size:7pt!important;line-height:1.25!important}
+  #fabrication .pill{font-size:7pt!important;padding:1mm 2mm!important}
+}
+
 </style><script>window.addEventListener('error',function(e){var n=document.getElementById('jsIssue');if(n){n.hidden=false;n.textContent='Une fonction du navigateur empêche le site de démarrer : '+e.message;}})</script><style>
 /* V6 — Atelier vivant */
 body{background:#f6f1e5;position:relative}
