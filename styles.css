@@ -563,3 +563,57 @@ body:after{left:auto!important;right:0!important;background-position:right top!i
   .tag{margin-top:2px!important;font-size:11px!important}
   #calculator .oil-tools-row{margin:9px 0 11px!important;padding-bottom:2px!important}
 }
+
+/* V16 — un seul fond provençal et titre non incliné */
+body{
+  background-color:#f2e7ce!important;
+  background-image:url("assets/soapy-drome-background-v16.webp")!important;
+  background-position:center top!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  background-attachment:fixed!important;
+}
+body:before,body:after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+}
+header,.pixel-header{
+  background:transparent!important;
+}
+header:before{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+}
+.top>div:first-child{
+  transform:none!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+.brand,.tag{
+  transform:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  background:transparent!important;
+}
+.landscape,#home .landscape{
+  background:linear-gradient(180deg,#a9cbd5 0%,#dbe4c4 58%,#8ea675 100%)!important;
+}
+.world,.garden-world{
+  background:linear-gradient(145deg,#eaf0dc,#dce5c8)!important;
+}
+@media(max-width:820px){
+  body{
+    background-position:center top!important;
+    background-size:auto 100svh!important;
+    background-repeat:no-repeat!important;
+    background-attachment:scroll!important;
+  }
+  .pixel-header{background:transparent!important}
+  .top>div:first-child{transform:none!important}
+}
