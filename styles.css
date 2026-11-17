@@ -711,11 +711,17 @@ main.shell.content:before{content:none!important;display:none!important}
 .music-volume-panel output{color:#516c47;font-variant-numeric:tabular-nums}
 .music-volume-panel input[type=range]{grid-column:1 / -1;width:100%;height:22px;margin:1px 0 0;padding:0;accent-color:#617b50;background:transparent}
 @media(max-width:700px){.pixel-header .top:before{left:4px;bottom:35px;width:clamp(132px,39vw,174px);height:clamp(155px,44vw,190px)}.music-volume-panel{top:calc(env(safe-area-inset-top,0px) + 56px);right:calc(env(safe-area-inset-right,0px) + 8px);width:min(210px,calc(100vw - 16px))}}
-/* Carrousel de sécurité illustré, sans vidéo */
-.tutorial-feature{grid-column:span 2}
-.tutorial-visual{width:min(100%,420px);aspect-ratio:1;margin:14px auto;background-image:url("assets/louna-securite.webp");background-repeat:no-repeat;background-size:200% 200%;image-rendering:auto}
+
+/* Tutoriels en cartes régulières : aucune carte ne déborde de la grille */
+#tutorials{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.tutorial-card{display:flex;flex-direction:column;min-width:0;grid-column:auto;padding:16px}
+.tutorial-card h3{min-height:2.4em}
+.tutorial-summary{min-height:3.6em}
+.tutorial-visual{display:block;width:100%;aspect-ratio:1/1;flex:none;margin:10px 0;background-repeat:no-repeat;background-size:200% 200%;background-color:#eee4cb;image-rendering:auto}
 .tutorial-visual.crop-tl{background-position:0 0}.tutorial-visual.crop-tr{background-position:100% 0}.tutorial-visual.crop-bl{background-position:0 100%}.tutorial-visual.crop-br{background-position:100% 100%}
-.tutorial-caption{min-height:42px;text-align:center;margin:8px 0;color:var(--ink)}
-.tutorial-controls{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.tutorial-controls button{padding:9px 12px}.tutorial-controls button:disabled{opacity:.45;cursor:default}
-@media(max-width:820px){.tutorial-feature{grid-column:1/-1}.tutorial-visual{width:min(100%,360px)}}
+.tutorial-caption{min-height:48px;margin:6px 0 12px;color:var(--ink);font-size:13px;line-height:1.4}
+.tutorial-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+.tutorial-controls button{width:42px;height:40px;padding:0;font-size:20px}
+.tutorial-controls button:disabled{opacity:.42;cursor:default}
+@media(max-width:900px){#tutorials{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){#tutorials{grid-template-columns:minmax(0,1fr)}.tutorial-card h3,.tutorial-summary{min-height:0}.tutorial-visual{max-width:420px;align-self:center}.tutorial-caption{min-height:0}}
