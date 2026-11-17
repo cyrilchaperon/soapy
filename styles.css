@@ -701,3 +701,13 @@ main.shell.content:before{content:none!important;display:none!important}
 .music-toggle .music-note{font-size:19px;color:#506b47}.music-toggle.is-playing{background:linear-gradient(#eef2dd,#d9e4c4);border-color:#617b50}.music-toggle:focus-visible{outline:3px solid #7d9c68;outline-offset:3px}
 @media(max-width:700px){.ambient-butterfly{font-size:15px!important;opacity:.68!important}.butterfly-one{left:-5px!important;top:37vh!important}.butterfly-two{right:-5px!important;top:61vh!important}.butterfly-three{left:-6px!important;top:82vh!important}.ambient-birds{left:18vw!important;top:27vh!important;font-size:17px!important;opacity:.46!important}.ambient-grass{bottom:70px!important;font-size:24px!important;opacity:.65!important}.music-toggle{width:42px;height:42px;min-height:42px;padding:0;justify-content:center;right:calc(env(safe-area-inset-right,0px) + 8px);top:calc(env(safe-area-inset-top,0px) + 8px)}.music-toggle-label{display:none}.music-toggle .music-note{font-size:20px}}
 @media(prefers-reduced-motion:reduce){.ambient-butterfly,.ambient-birds,.ambient-grass,.workshop-earned-badge{animation:none!important;transform:none!important}.workshop-earned-badge{opacity:1!important}}
+
+/* Détourage propre de Louna dans le bandeau */
+.pixel-header .top:before{background-image:url("assets/louna-header.webp?v=1");background-position:center bottom;background-size:contain;background-repeat:no-repeat;filter:drop-shadow(3px 4px 1px #49361d44)}
+/* Contrôle compact du volume de la musique d'ambiance */
+.music-volume-panel{position:fixed;z-index:36;top:calc(env(safe-area-inset-top,0px) + 61px);right:calc(env(safe-area-inset-right,0px) + 14px);width:210px;padding:10px 12px;border:2px solid #875e39;border-radius:14px;background:linear-gradient(#fff8e8,#ead2a8);box-shadow:3px 5px 0 #563b2544;color:#3f3323}
+.music-volume-panel[hidden]{display:none!important}
+.music-volume-panel label{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 10px;font-size:12px;font-weight:750}
+.music-volume-panel output{color:#516c47;font-variant-numeric:tabular-nums}
+.music-volume-panel input[type=range]{grid-column:1 / -1;width:100%;height:22px;margin:1px 0 0;padding:0;accent-color:#617b50;background:transparent}
+@media(max-width:700px){.pixel-header .top:before{left:4px;bottom:35px;width:clamp(132px,39vw,174px);height:clamp(155px,44vw,190px)}.music-volume-panel{top:calc(env(safe-area-inset-top,0px) + 56px);right:calc(env(safe-area-inset-right,0px) + 8px);width:min(210px,calc(100vw - 16px))}}
