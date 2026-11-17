@@ -617,3 +617,27 @@ header:before{
   .pixel-header{background:transparent!important}
   .top>div:first-child{transform:none!important}
 }
+
+
+/* V17 — verouillage du poids et petites animations de décor */
+.total-lock-row{display:flex;align-items:stretch;gap:8px}
+.total-lock-row input{flex:1;min-width:0}
+.total-lock{flex:0 0 44px;min-height:42px;border:2px solid #b7c49b;border-radius:10px;background:#f2f3df;color:#3f523f;box-shadow:0 3px 0 #d8ddc7;font-size:18px;line-height:1}
+.total-lock.locked{background:#e2ebd8;border-color:#6f875e}
+.total-lock:focus-visible{outline:3px solid #b0bd8d;outline-offset:2px}
+#totalOils[readonly]{background:#e9eddd;cursor:default}
+.ambient-decor{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;contain:paint}
+main.shell.content{position:relative;z-index:1}
+header:after{content:none!important;display:none!important}
+.ambient-butterfly,.ambient-birds,.ambient-grass{position:absolute;display:block;pointer-events:none;user-select:none}
+.ambient-butterfly{font-size:16px;opacity:.62;filter:saturate(.72);animation:butterflyDrift 16s ease-in-out infinite}
+.butterfly-one{left:4vw;top:57vh;animation-delay:-4s}
+.butterfly-two{right:3vw;top:34vh;font-size:13px;animation-delay:-10s}
+.ambient-birds{top:14vh;right:8vw;color:#534a36;font:700 20px/1 Georgia,serif;letter-spacing:2px;opacity:.42;animation:distantBirdFlight 36s ease-in-out infinite alternate}
+.ambient-grass{bottom:2vh;font-size:26px;opacity:.38;transform-origin:bottom center;animation:grassSway 4.8s ease-in-out infinite}
+.grass-left{left:1vw}.grass-right{right:1vw;animation-delay:-2.3s}
+@keyframes butterflyDrift{0%,100%{transform:translate(0,0) rotate(-8deg)}25%{transform:translate(22px,-18px) rotate(8deg)}55%{transform:translate(48px,8px) rotate(-4deg)}78%{transform:translate(18px,26px) rotate(10deg)}}
+@keyframes distantBirdFlight{from{transform:translateX(0)}to{transform:translateX(-12vw)}}
+@keyframes grassSway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(7deg)}}
+@media(max-width:700px){.total-lock-row{gap:6px}.total-lock{flex-basis:42px;min-height:44px}.ambient-butterfly{font-size:13px;opacity:.42}.butterfly-one{top:48vh;left:1vw}.butterfly-two{top:68vh;right:1vw;font-size:11px}.ambient-birds{top:10vh;right:5vw;font-size:15px;opacity:.32}.ambient-grass{font-size:21px;opacity:.3}.grass-left{left:0}.grass-right{right:0}}
+@media(prefers-reduced-motion:reduce){.ambient-butterfly,.ambient-birds,.ambient-grass{animation:none!important;transform:none!important}}
