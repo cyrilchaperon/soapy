@@ -641,3 +641,45 @@ header:after{content:none!important;display:none!important}
 @keyframes grassSway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(7deg)}}
 @media(max-width:700px){.total-lock-row{gap:6px}.total-lock{flex-basis:42px;min-height:44px}.ambient-butterfly{font-size:13px;opacity:.42}.butterfly-one{top:48vh;left:1vw}.butterfly-two{top:68vh;right:1vw;font-size:11px}.ambient-birds{top:10vh;right:5vw;font-size:15px;opacity:.32}.ambient-grass{font-size:21px;opacity:.3}.grass-left{left:0}.grass-right{right:0}}
 @media(prefers-reduced-motion:reduce){.ambient-butterfly,.ambient-birds,.ambient-grass{animation:none!important;transform:none!important}}
+
+
+/* V18 — cadres extérieurs allégés et atelier animé à l'accueil */
+main.shell.content{
+  width:min(1500px,calc(100% - 28px))!important;
+  margin:18px auto 40px!important;
+  padding:clamp(10px,1.8vw,24px) 0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+main.shell.content:before{content:none!important;display:none!important}
+.workshop-scene{
+  position:relative!important;
+  isolation:isolate;
+  min-height:0!important;
+  aspect-ratio:1/1;
+  overflow:hidden!important;
+  border:3px solid #71845b!important;
+  border-radius:18px!important;
+  box-shadow:5px 6px 0 #9c8d62!important;
+  background:#dce8cf!important;
+}
+.workshop-image{
+  position:absolute;inset:0;width:100%;height:100%;display:block;
+  object-fit:cover;object-position:center;
+  animation:workshopBreath 20s ease-in-out infinite alternate;
+}
+.workshop-steam{position:absolute;z-index:2;left:43%;top:48%;width:14px;height:27px;border:2px solid #fff9e8;border-color:#fff9e8 transparent transparent #fff9e8;border-radius:50%;opacity:0;filter:blur(.3px);animation:soapSteam 4s ease-out infinite}
+.steam-two{left:47%;top:46%;width:12px;height:22px;animation-delay:1.8s}
+.workshop-glint{position:absolute;z-index:2;color:#fff1ac;text-shadow:1px 1px #9c7247;font-size:17px;animation:soapGlint 3.6s ease-in-out infinite}
+.glint-one{left:24%;top:68%}.glint-two{right:17%;top:37%;font-size:12px;animation-delay:1.4s}
+@keyframes workshopBreath{from{transform:scale(1.015)}to{transform:scale(1.055)}}
+@keyframes soapSteam{0%{opacity:0;transform:translateY(10px) scale(.75) rotate(-8deg)}30%{opacity:.75}100%{opacity:0;transform:translateY(-30px) scale(1.25) rotate(8deg)}}
+@keyframes soapGlint{0%,100%{opacity:.25;transform:scale(.8) rotate(-10deg)}50%{opacity:.95;transform:scale(1.15) rotate(12deg)}}
+@media(max-width:820px){
+ main.shell.content{width:calc(100% - 16px)!important;margin:12px auto 28px!important;padding:8px 0 20px!important}
+ .workshop-scene{aspect-ratio:1.08/1;border-radius:14px!important}
+ .workshop-steam{left:42%;top:47%;transform:scale(.8)}
+}
+@media(prefers-reduced-motion:reduce){.workshop-image,.workshop-steam,.workshop-glint{animation:none!important}.workshop-image{transform:none!important}.workshop-steam{opacity:.25!important}}
