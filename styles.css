@@ -725,3 +725,25 @@ main.shell.content:before{content:none!important;display:none!important}
 .tutorial-controls button:disabled{opacity:.42;cursor:default}
 @media(max-width:900px){#tutorials{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){#tutorials{grid-template-columns:minmax(0,1fr)}.tutorial-card h3,.tutorial-summary{min-height:0}.tutorial-visual{max-width:420px;align-self:center}.tutorial-caption{min-height:0}}
+
+/* Décor d’ambiance : papillons dans les marges, herbe basse animée */
+.ambient-decor{position:fixed!important;inset:0!important;z-index:0!important;overflow:visible!important;pointer-events:none!important;contain:paint!important}
+main.shell.content{position:relative;z-index:1}
+.footer{position:relative;z-index:1}
+.ambient-birds{display:none!important}
+.ambient-butterfly{position:absolute;display:block;font-size:clamp(10px,1.2vw,19px)!important;line-height:1;opacity:.8!important;filter:drop-shadow(1px 1px 1px #fff8e7)!important;animation:butterflyMargin 12s ease-in-out infinite!important;pointer-events:none}
+.butterfly-one{top:36vh!important;left:max(2px,calc((100vw - 1180px)/2 - 22px))!important}
+.butterfly-two{top:67vh!important;right:max(2px,calc((100vw - 1180px)/2 - 22px))!important;animation-delay:-6s!important}
+@keyframes butterflyMargin{0%,100%{transform:translate(0,0) rotate(-5deg)}50%{transform:translate(4px,-5px) rotate(5deg)}}
+.ambient-grass{position:fixed!important;bottom:0!important;display:block!important;width:78px!important;height:48px!important;font-size:0!important;opacity:.72!important;filter:none!important;transform:none!important;overflow:visible}
+.grass-left{left:max(0px,calc((100vw - 1180px)/2 - 80px))!important;right:auto!important}
+.grass-right{right:max(0px,calc((100vw - 1180px)/2 - 80px))!important;left:auto!important}
+.ambient-grass i{position:absolute;bottom:0;left:var(--x);display:block;width:8px;height:var(--h);background:linear-gradient(90deg,#506b45,#8a9d66);clip-path:polygon(50% 100%,8% 0,100% 22%);transform-origin:50% 100%;animation:grassWind var(--speed) ease-in-out infinite}
+.ambient-grass i:nth-child(1){--x:12%;--h:24px;--lean:-31deg;--speed:3.2s}
+.ambient-grass i:nth-child(2){--x:28%;--h:36px;--lean:-18deg;--speed:3.7s;animation-delay:-1.2s}
+.ambient-grass i:nth-child(3){--x:45%;--h:31px;--lean:2deg;--speed:3.4s;animation-delay:-.5s}
+.ambient-grass i:nth-child(4){--x:63%;--h:43px;--lean:19deg;--speed:4s;animation-delay:-2s}
+.ambient-grass i:nth-child(5){--x:80%;--h:29px;--lean:33deg;--speed:3.6s;animation-delay:-.9s}
+@keyframes grassWind{0%,100%{transform:rotate(calc(var(--lean) - 5deg))}50%{transform:rotate(calc(var(--lean) + 7deg))}}
+@media(max-width:700px){.ambient-butterfly{font-size:10px!important}.butterfly-one{left:2px!important;top:33vh!important}.butterfly-two{right:2px!important;top:64vh!important}.ambient-grass{bottom:68px!important;width:42px!important;height:30px!important}.ambient-grass i{width:5px}.ambient-grass i:nth-child(1){--h:16px}.ambient-grass i:nth-child(2){--h:24px}.ambient-grass i:nth-child(3){--h:20px}.ambient-grass i:nth-child(4){--h:29px}.ambient-grass i:nth-child(5){--h:18px}.grass-left{left:0!important}.grass-right{right:0!important}}
+@media(prefers-reduced-motion:reduce){.ambient-butterfly,.ambient-grass i{animation:none!important;transform:none!important}}
