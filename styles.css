@@ -683,3 +683,21 @@ main.shell.content:before{content:none!important;display:none!important}
  .workshop-steam{left:42%;top:47%;transform:scale(.8)}
 }
 @media(prefers-reduced-motion:reduce){.workshop-image,.workshop-steam,.workshop-glint{animation:none!important}.workshop-image{transform:none!important}.workshop-steam{opacity:.25!important}}
+
+/* V20 — décor animé visible sur le fond global, badges dans le présentoir, musique */
+.ambient-decor{z-index:4!important;overflow:hidden!important;contain:paint}
+.ambient-butterfly{font-size:clamp(18px,1.65vw,26px)!important;opacity:.9!important;filter:drop-shadow(1px 2px 1px #fff6d1)!important}
+.butterfly-one{left:8px!important;top:34vh!important;animation:butterflyDrift 13s ease-in-out infinite!important}
+.butterfly-two{right:8px!important;top:57vh!important;font-size:clamp(16px,1.4vw,22px)!important;animation:butterflyDrift 17s ease-in-out -7s infinite!important}
+.butterfly-three{left:clamp(8px,4vw,56px)!important;top:79vh!important;font-size:clamp(14px,1.2vw,19px)!important;animation:butterflyDrift 19s ease-in-out -12s infinite!important}
+.ambient-birds{top:29vh!important;left:clamp(18px,22vw,330px)!important;right:auto!important;opacity:.62!important;font-size:clamp(18px,1.7vw,25px)!important;animation:distantBirdFlight 24s ease-in-out infinite alternate!important}
+.ambient-grass{bottom:2vh!important;font-size:clamp(25px,2.2vw,36px)!important;opacity:.78!important;filter:drop-shadow(1px 2px 1px #f8f0d5)!important}
+.grass-left{left:1px!important}.grass-right{right:1px!important}
+.workshop-scene{container-type:inline-size}
+.workshop-badge-display{position:absolute;inset:0;z-index:4;pointer-events:none}
+.workshop-earned-badge{position:absolute;width:1.9%;height:1.9%;display:grid;place-items:center;box-sizing:border-box;border:1px solid #f6d87e;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff4bd,#c58b39 73%,#704824);box-shadow:0 0 0 1px #593b22,0 0 5px #ffdf7c;overflow:hidden;color:#354635;font-size:1.25cqw;line-height:1;transform:translate(-50%,-50%) scale(0);animation:badgeSettle .72s cubic-bezier(.2,1.5,.5,1) both;animation-delay:calc(var(--slot)*55ms)}
+@keyframes badgeSettle{0%{opacity:0;transform:translate(-50%,-50%) scale(0) rotate(-30deg)}65%{opacity:1;transform:translate(-50%,-50%) scale(1.35) rotate(8deg)}100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}}
+.music-toggle{position:fixed;z-index:35;top:calc(env(safe-area-inset-top,0px) + 12px);right:calc(env(safe-area-inset-right,0px) + 14px);display:flex;align-items:center;gap:7px;min-height:42px;padding:7px 12px;border:2px solid #875e39;border-radius:999px;background:linear-gradient(#fff6df,#e8c58d);color:#3f3323;box-shadow:2px 3px 0 #563b25;font:700 12px/1 system-ui,sans-serif}
+.music-toggle .music-note{font-size:19px;color:#506b47}.music-toggle.is-playing{background:linear-gradient(#eef2dd,#d9e4c4);border-color:#617b50}.music-toggle:focus-visible{outline:3px solid #7d9c68;outline-offset:3px}
+@media(max-width:700px){.ambient-butterfly{font-size:15px!important;opacity:.68!important}.butterfly-one{left:-5px!important;top:37vh!important}.butterfly-two{right:-5px!important;top:61vh!important}.butterfly-three{left:-6px!important;top:82vh!important}.ambient-birds{left:18vw!important;top:27vh!important;font-size:17px!important;opacity:.46!important}.ambient-grass{bottom:70px!important;font-size:24px!important;opacity:.65!important}.music-toggle{width:42px;height:42px;min-height:42px;padding:0;justify-content:center;right:calc(env(safe-area-inset-right,0px) + 8px);top:calc(env(safe-area-inset-top,0px) + 8px)}.music-toggle-label{display:none}.music-toggle .music-note{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.ambient-butterfly,.ambient-birds,.ambient-grass,.workshop-earned-badge{animation:none!important;transform:none!important}.workshop-earned-badge{opacity:1!important}}
