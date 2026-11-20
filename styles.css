@@ -747,3 +747,19 @@ main.shell.content{position:relative;z-index:1}
 @keyframes grassWind{0%,100%{transform:rotate(calc(var(--lean) - 5deg))}50%{transform:rotate(calc(var(--lean) + 7deg))}}
 @media(max-width:700px){.ambient-butterfly{font-size:10px!important}.butterfly-one{left:2px!important;top:33vh!important}.butterfly-two{right:2px!important;top:64vh!important}.ambient-grass{bottom:68px!important;width:42px!important;height:30px!important}.ambient-grass i{width:5px}.ambient-grass i:nth-child(1){--h:16px}.ambient-grass i:nth-child(2){--h:24px}.ambient-grass i:nth-child(3){--h:20px}.ambient-grass i:nth-child(4){--h:29px}.ambient-grass i:nth-child(5){--h:18px}.grass-left{left:0!important}.grass-right{right:0!important}}
 @media(prefers-reduced-motion:reduce){.ambient-butterfly,.ambient-grass i{animation:none!important;transform:none!important}}
+
+/* Options d'ajout du calculateur */
+.additives-panel{margin-top:14px;padding:14px;border:1px solid #d9d2b8;border-radius:10px;background:linear-gradient(135deg,#f5f0dc,#fbf8ed)}
+.additives-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-bottom:10px;color:#3f5740}
+.additives-title b{font-family:Georgia,serif;font-size:17px}
+.additives-title small,.additives-note{color:#68715d;font-size:12px;line-height:1.45}
+.additives-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.additive-group{min-width:0;padding:10px;border:1px solid #ddd4bb;border-radius:8px;background:#fffdf7}
+.additive-toggle{display:flex;align-items:center;gap:8px;font-weight:700;color:#475a41;cursor:pointer}
+.additive-toggle input,.additive-choice input{width:18px!important;height:18px;accent-color:#718653;flex:0 0 auto}
+.additive-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 10px;margin-top:10px;padding-top:9px;border-top:1px solid #eee7d4}
+.additive-options[hidden]{display:none}
+.additive-choice{display:flex;align-items:center;gap:6px;min-width:0;font-size:12px;line-height:1.25;cursor:pointer}
+.additive-choice span{overflow-wrap:anywhere}
+.additives-note{margin:10px 0 0}
+@media(max-width:640px){.additives-groups{grid-template-columns:1fr}.additive-options{grid-template-columns:repeat(2,minmax(0,1fr))}.additive-group{padding:9px}.additives-note{font-size:11px}}
